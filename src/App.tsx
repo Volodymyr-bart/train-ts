@@ -7,11 +7,13 @@ import axios from "axios";
 import List from "./componets/List";
 import UserItem from "./componets/UserItem";
 import TodoItem from "./componets/TodoItem";
+import EventsExample from "./componets/EventsExample";
 
 function App() {
   // const [count, setCount] = useState(0);
   const [users, setUsers] = useState<IUser[]>([]);
   const [todos, setTodos] = useState<ITodo[]>([]);
+  const [limitTodos, setLimitTodos] = useState<number>(10);
   const handleClick = (count: number) => {
     console.log(count);
   };
@@ -26,10 +28,10 @@ function App() {
       console.log(error);
     }
   }
-  async function fetchTodos() {
+  async function fetchTodos(limit: number) {
     try {
       const response = await axios.get<ITodo[]>(
-        `https://jsonplaceholder.typicode.com/todos`
+        `https://jsonplaceholder.typicode.com/todos?_limit=${limit}`
       );
       setTodos(response.data);
     } catch (error) {
@@ -39,11 +41,12 @@ function App() {
 
   useEffect(() => {
     fetchUsers();
-    fetchTodos();
-  }, []);
+    fetchTodos(limitTodos);
+  }, [limitTodos]);
 
   return (
     <div>
+      <EventsExample />
       <Card
         width="200px"
         height="200px"
@@ -58,7 +61,7 @@ function App() {
       />
       <List
         title="Todos"
-        items={todos.slice(0, 10)}
+        items={todos}
         renderItem={(todo: ITodo) => <TodoItem todo={todo} key={todo.id} />}
       />
       {/* <UserList users={users} /> */}

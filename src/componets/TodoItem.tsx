@@ -6,7 +6,17 @@ interface TodoItemProps {
 }
 
 const TodoItem: FC<TodoItemProps> = ({ todo }) => {
-  return <li>{todo.title}</li>;
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // Обробка зміни стану при зміні значення checkbox
+    // Ви можете виконати необхідні дії при зміні стану todo.completed тут
+    console.log(event.target.checked);
+  };
+  return (
+    <li>
+      <input type="checkbox" checked={todo.completed} onChange={handleChange} />
+      {todo.title}
+    </li>
+  );
 };
 
 export default TodoItem;
