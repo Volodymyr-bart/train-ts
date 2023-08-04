@@ -3,7 +3,7 @@ import { FC, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../hooks/hook";
 import { getTodosByUser, getUser } from "../store/User/actions";
-import List from "../componets/List";
+import List from "../componets/List/List";
 import TodoItem from "../componets/TodoItem";
 import { ITodo } from "../types/interface";
 import FormTodo from "../componets/FormTodo";

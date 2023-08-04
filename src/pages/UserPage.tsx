@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import List from "../componets/List";
+import List from "../componets/List/List";
 import axios from "axios";
 import UserItem from "../componets/UserItem/UserItem";
 import { IUser } from "../types/interface";

@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { ListStyled } from "./List.styled";
 interface ListProps<T> {
   title?: string;
   items: T[];
@@ -9,7 +10,7 @@ export default function List<T>(props: ListProps<T>) {
   return (
     <>
       {props.title && <h2>{props.title}</h2>}
-      <ul>{props.items.map(props.renderItem)}</ul>
+      <ListStyled>{props.items.map(props.renderItem)}</ListStyled>
     </>
   );
 }
