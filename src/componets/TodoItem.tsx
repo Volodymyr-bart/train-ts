@@ -1,6 +1,6 @@
 import { useAppDispatch } from "../hooks/hook";
 import { FC } from "react";
-import { ITodo } from "../types/types";
+import { ITodo } from "../types/interface";
 import { toggleComplete, removeTodo } from "../store/Todos/todosSlice";
 
 interface TodoItemProps {

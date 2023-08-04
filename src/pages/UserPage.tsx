@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import List from "../componets/List";
 import axios from "axios";
-import UserItem from "../componets/UserItem";
-import { IUser } from "../types/types";
+import UserItem from "../componets/UserItem/UserItem";
+import { IUser } from "../types/interface";
 import { useNavigate } from "react-router-dom";
 
 const UserPage = () => {

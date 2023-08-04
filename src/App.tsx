@@ -1,29 +1,19 @@
 import "./App.css";
 
 import UserPage from "./pages/UserPage";
-import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
-import TodoPage from "./pages/TodoPage";
-import TodoItemPage from "./pages/TodoItemPage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import UserItemPage from "./pages/UserItemPage";
+import Header from "./componets/Header/Header";
 
 function App() {
-  // const [count, setCount] = useState(0);
-
-  const handleClick = (count: number) => {
-    console.log(count);
-  };
 
   return (
     <BrowserRouter>
-      <div>
-        <NavLink to={"/users"}>users</NavLink>
-        <NavLink to={"/todos"}>todos</NavLink>
-      </div>
+      <Header />
       <Routes>
         <Route path={"/users"} element={<UserPage />} />
-        <Route path={"/todos"} element={<TodoPage />} />
         <Route path={"/users/:id"} element={<UserItemPage />} />
-        <Route path={"/todos/:id"} element={<TodoItemPage />} />
       </Routes>
     </BrowserRouter>
     // <div>

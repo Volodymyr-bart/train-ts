@@ -1,5 +1,6 @@
 import { FC } from "react";
-import { IUser } from "../types/types";
+import { IUser } from "../../types/interface";
+import { UserItemStyled } from "./UserItem.styled";
 
 interface UserItemProps {
   user: IUser;
@@ -7,7 +8,9 @@ interface UserItemProps {
 }
 
 const UserItem: FC<UserItemProps> = ({ user, onClick }) => {
-  return <li onClick={() => onClick(user)}>{user.name}</li>;
+  return (
+    <UserItemStyled onClick={() => onClick(user)}>{user.name}</UserItemStyled>
+  );
 };
 
 export default UserItem;
