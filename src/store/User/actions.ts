@@ -54,34 +54,6 @@ export const addNewTodo = createAsyncThunk<
   }
 });
 
-// export const toggleStatus = createAsyncThunk<
-//   ITodo,
-//   number,
-//   { rejectValue: string }
-// >("todos/toggleStatus", async function (id, { rejectWithValue, getState }) {
-//   const todo = getState().user.todos.find((todo) => todo.id === id);
-
-//   if (todo) {
-//     try {
-//       const { data } = await axios.patch(
-//         `https://jsonplaceholder.typicode.com/todos/${id}`,
-//         {
-//           completed: !todo.completed,
-//         },
-//         {
-//           headers: {
-//             "Content-Type": "application/json",
-//           },
-//         }
-//       );
-//       return data;
-//     } catch (error) {
-//       return rejectWithValue("Can't toggle status. Server error.");
-//     }
-//   }
-
-//   return rejectWithValue("No such todo in the list!");
-// });
 export const toggleStatus = createAsyncThunk<
   ITodo,
   number,
